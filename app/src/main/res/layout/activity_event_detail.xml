@@ -4,96 +4,176 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F5F5"
     tools:context=".EventDetailActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:orientation="vertical">
 
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/CustomToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/blue"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:paddingStart="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Detail Event"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"/>
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- Poster Event -->
         <ImageView
             android:id="@+id/ivEventPoster"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
             android:src="@drawable/ic_placeholder"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:id="@+id/tvEventTitle"
+        <!-- Detail Event -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Event Title"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintTop_toBottomOf="@id/ivEventPoster"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:orientation="vertical"
+            android:padding="18dp">
 
-        <TextView
-            android:id="@+id/tvEventDateTime"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Date at Time"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintTop_toBottomOf="@id/tvEventTitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            <!-- Judul -->
+            <TextView
+                android:id="@+id/tvEventTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Event"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:id="@+id/tvEventLocation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Location"
-            android:textSize="16sp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintTop_toBottomOf="@id/tvEventDateTime"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            <!-- Tanggal -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Description"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp"
-            app:layout_constraintTop_toBottomOf="@id/tvEventLocation"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_calendar"
+                    android:tint="@color/blue"
+                    android:layout_marginEnd="8dp" />
 
-        <TextView
-            android:id="@+id/tvEventDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Event description goes here..."
-            android:layout_marginBottom="24dp"
-            app:layout_constraintTop_toBottomOf="@id/tvEventLocation"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+                <TextView
+                    android:id="@+id/tvEventDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal"
+                    android:textSize="16sp"
+                    android:textColor="@color/gray" />
+            </LinearLayout>
 
+            <!-- Waktu -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_time"
+                    android:tint="@color/blue"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/tvEventTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Waktu"
+                    android:textSize="16sp"
+                    android:textColor="@color/gray" />
+            </LinearLayout>
+
+            <!-- Lokasi -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_location"
+                    android:tint="@color/blue"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/tvEventLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lokasi"
+                    android:textSize="16sp"
+                    android:textColor="@color/gray" />
+            </LinearLayout>
+
+            <!-- Deskripsi -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deksripsi"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="13dp"
+                android:textColor="#333333" />
+            <!-- Deskripsi -->
+            <TextView
+                android:id="@+id/tvEventDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi event akan ditampilkan di sini"
+                android:textSize="14sp"
+                android:layout_marginBottom="24dp"
+                android:textColor="@color/gray"
+                android:justificationMode="inter_word"/>
+        </LinearLayout>
+        <!-- Tombol Daftar Event -->
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Register Now"
+            android:layout_height="48dp"
+            android:text="Daftar Event"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="@color/blue"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
-            app:layout_constraintTop_toBottomOf="@id/tvEventDescription"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:layout_marginHorizontal="16dp" />
 
+        <!-- Tombol Unduh Poster -->
         <Button
             android:id="@+id/btnDownloadPoster"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Download Poster"
-            app:layout_constraintTop_toBottomOf="@id/btnRegister"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="48dp"
+            android:text="Unduh Poster"
+            android:textAllCaps="false"
+            android:textColor="@color/blue"
+            android:backgroundTint="@color/white"
+            android:elevation="4dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginHorizontal="16dp" />
+    </LinearLayout>
 </ScrollView>

@@ -7,6 +7,8 @@ import com.bumptech.glide.Glide
 import com.example.event.R
 import com.example.event.model.Event
 import com.example.event.databinding.ItemEventBinding
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class EventAdapter(private val onItemClick: (Event) -> Unit) :
     RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
@@ -18,7 +20,7 @@ class EventAdapter(private val onItemClick: (Event) -> Unit) :
 
         fun bind(event: Event) {
             binding.tvEventTitle.text = event.title
-            binding.tvEventDate.text = "${event.date} • ${event.time}"
+            binding.tvEventDate.text = "${formatTanggal(event.date)} - ${event.time} WIB"
             binding.tvEventLocation.text = event.location
 
             Glide.with(binding.root.context)
@@ -49,5 +51,16 @@ class EventAdapter(private val onItemClick: (Event) -> Unit) :
         events.clear()
         events.addAll(newEvents)
         notifyDataSetChanged()
+    }
+
+    private fun formatTanggal(tanggal: String): String {
+        return try {
+            val parser = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            val formatter = SimpleDateFormat("dd MMMM yyyy", Locale("id", "ID"))
+            val date = parser.parse(tanggal)
+            formatter.format(date!!)
+        } catch (e: Exception) {
+            tanggal
+        }
     }
 }

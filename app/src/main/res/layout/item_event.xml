@@ -3,53 +3,57 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+    android:layout_margin="16dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    android:background="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp">
+        android:orientation="vertical">
 
+        <!-- Gambar Poster -->
         <ImageView
             android:id="@+id/iv_event_poster"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_placeholder"/>
+            android:src="@drawable/ic_placeholder"
+            android:contentDescription="Poster Event"/>
 
+        <!-- Informasi Event -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@android:color/white">
 
             <TextView
                 android:id="@+id/tv_event_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Event Title"
+                android:text="Nama Event"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/tv_event_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="Date • Time"
-                android:textColor="?android:attr/textColorSecondary"/>
+                android:text="Tanggal • Waktu"
+                android:textColor="@color/gray" />
 
             <TextView
                 android:id="@+id/tv_event_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Location"
-                android:textColor="?android:attr/textColorSecondary"/>
-
+                android:layout_marginTop="2dp"
+                android:text="Lokasi Acara"
+                android:textColor="@color/gray" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.event.databinding.ActivityAddEventBinding
 import com.example.event.model.Event
 import com.google.firebase.database.DatabaseReference
@@ -19,6 +20,16 @@ class AddEventActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAddEventBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Atur toolbar
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowTitleEnabled(false) // Hilangkan judul
+
+        // Atur warna icon back jadi putih
+        val upArrow = ContextCompat.getDrawable(this, R.drawable.ic_back)
+        upArrow?.setTint(android.graphics.Color.WHITE)
+        supportActionBar?.setHomeAsUpIndicator(upArrow)
 
         // 1. Inisialisasi Firebase
         database = FirebaseDatabase.getInstance().reference.child("events")
@@ -37,6 +48,11 @@ class AddEventActivity : AppCompatActivity() {
             progressDialog.show()
             saveEventToDatabase()
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
     private fun validateForm(): Boolean {
@@ -58,7 +74,9 @@ class AddEventActivity : AppCompatActivity() {
     private fun isValidImageUrl(url: String): Boolean {
         return Patterns.WEB_URL.matcher(url).matches() &&
                 (url.endsWith(".jpg", ignoreCase = true) ||
-                        url.endsWith(".png", ignoreCase = true))
+                        url.endsWith(".jpeg", ignoreCase = true) ||
+                        url.endsWith(".png", ignoreCase = true) ||
+                        url.endsWith(".webp", ignoreCase = true))
     }
 
     private fun saveEventToDatabase() {
