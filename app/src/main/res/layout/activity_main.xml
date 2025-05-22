@@ -9,19 +9,16 @@
     android:padding="24dp"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:layout_width="170dp"
-        android:layout_height="140dp"
-        android:src="@drawable/ic_logo_primary"
-        android:contentDescription="Logo" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Platform No. 1 untuk Beli Tiket dan Kelola Event"
-        android:textSize="14sp"
-        android:textColor="@color/gray"
-        android:layout_marginBottom="32dp" />
+        android:text="Halo,\nSelamat Datang!"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        android:layout_gravity="start"
+        android:textColor="@color/blue"
+        android:layout_marginBottom="90dp"
+        android:fontFamily="@font/plus_jakarta"/>
 
     <!-- Card View for Input Fields -->
     <androidx.cardview.widget.CardView
@@ -43,7 +40,8 @@
                 android:text="Email"
                 android:textColor="#000000"
                 android:textSize="14sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:fontFamily="@font/plus_jakarta"/>
 
             <!-- Email Input -->
             <com.google.android.material.textfield.TextInputLayout
@@ -57,7 +55,8 @@
                     android:layout_height="wrap_content"
                     android:hint="Masukkan Email"
                     android:textSize="14sp"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    android:fontFamily="@font/plus_jakarta"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -66,7 +65,8 @@
                 android:text="Kata Sandi"
                 android:textColor="#000000"
                 android:textSize="14sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:fontFamily="@font/plus_jakarta"/>
 
             <!-- Password Input -->
             <com.google.android.material.textfield.TextInputLayout
@@ -80,7 +80,8 @@
                     android:layout_height="wrap_content"
                     android:hint="Masukkan Kata Sandi"
                     android:textSize="14sp"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+                    android:fontFamily="@font/plus_jakarta"/>
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -94,24 +95,44 @@
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:backgroundTint="@color/blue"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/plus_jakarta"/>
 
-    <!-- Register Text -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Belum Punya Akun?"
-        android:textColor="#0E1B49"
-        android:layout_marginBottom="4dp" />
-
-    <!-- Register Button -->
-    <Button
-        android:id="@+id/btn_register"
+    <!-- Register Section: Text + Button in Horizontal Layout -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="Register"
-        android:textAllCaps="false"
-        android:textColor="#0E1B49"
-        android:backgroundTint="#FFFFFF"
-        android:elevation="4dp" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start|center_vertical"
+        android:layout_marginTop="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Belum Punya Akun?"
+            android:textColor="#0E1B49"
+            android:textSize="14sp"
+            android:fontFamily="@font/plus_jakarta"
+            android:layout_marginEnd="5dp"/>
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daftar Yuk"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textColor="#0E1B49"
+            android:backgroundTint="#FFFFFF"
+            android:elevation="4dp"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="12dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:fontFamily="@font/plus_jakarta"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
 </LinearLayout>

@@ -37,7 +37,8 @@
                 android:text="Nama Event"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:fontFamily="@font/plus_jakarta"/>
 
             <TextView
                 android:id="@+id/tv_event_date"
@@ -45,7 +46,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="Tanggal • Waktu"
-                android:textColor="@color/gray" />
+                android:textColor="@color/gray"
+                android:fontFamily="@font/plus_jakarta"/>
 
             <TextView
                 android:id="@+id/tv_event_location"
@@ -53,7 +55,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:text="Lokasi Acara"
-                android:textColor="@color/gray" />
+                android:textColor="@color/gray"
+                android:fontFamily="@font/plus_jakarta"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

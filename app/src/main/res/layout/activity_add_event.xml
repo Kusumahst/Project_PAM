@@ -28,7 +28,8 @@
                 android:text="Tambah Event"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/plus_jakarta"/>
         </androidx.appcompat.widget.Toolbar>
 
         <TextView
@@ -39,7 +40,8 @@
             android:textStyle="bold"
             android:textColor="#14274E"
             android:gravity="center"
-            android:layout_marginTop="24dp"/>
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/plus_jakarta"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -48,7 +50,8 @@
             android:textSize="14sp"
             android:textColor="@color/gray"
             android:gravity="center"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/plus_jakarta"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -70,7 +73,8 @@
                     android:text="Nama Event"
                     android:textColor="#000000"
                     android:textSize="14sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:fontFamily="@font/plus_jakarta"/>
 
                 <!-- Judul Input -->
                 <com.google.android.material.textfield.TextInputLayout
@@ -91,7 +95,8 @@
                     android:text="Deskripsi"
                     android:textColor="#000000"
                     android:textSize="14sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:fontFamily="@font/plus_jakarta"/>
 
                 <!-- Deskripsi Input -->
                 <com.google.android.material.textfield.TextInputLayout
@@ -113,7 +118,8 @@
                     android:text="Tanggal"
                     android:textColor="#000000"
                     android:textSize="14sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:fontFamily="@font/plus_jakarta"/>
 
                 <!-- Tanggal Input -->
                 <com.google.android.material.textfield.TextInputLayout
@@ -157,7 +163,8 @@
                     android:text="Lokasi"
                     android:textColor="#000000"
                     android:textSize="14sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:fontFamily="@font/plus_jakarta"/>
 
                 <!-- Lokasi Input -->
                 <com.google.android.material.textfield.TextInputLayout
@@ -178,7 +185,8 @@
                     android:text="Link Poster"
                     android:textColor="#000000"
                     android:textSize="14sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:fontFamily="@font/plus_jakarta"/>
 
                 <!-- URL Poster Input -->
                 <com.google.android.material.textfield.TextInputLayout
@@ -206,7 +214,8 @@
             android:textColor="#FFFFFF"
             android:backgroundTint="@color/blue"
             android:layout_marginTop="16dp"
-            android:layout_marginHorizontal="16dp"/>
+            android:layout_marginHorizontal="16dp"
+            android:fontFamily="@font/plus_jakarta"/>
 
     </LinearLayout>
 </ScrollView>

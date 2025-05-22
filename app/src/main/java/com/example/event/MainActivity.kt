@@ -23,7 +23,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         auth = FirebaseAuth.getInstance()
 
         binding.btnLogin.setOnClickListener(this)
-        binding.btnRegister.setOnClickListener(this)
+        binding.btnRegister.setOnClickListener {
+            // Pindah ke halaman Register
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
     }
 
     override fun onStart() {
@@ -35,16 +38,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.btn_login -> {
-                if (validateForm()) {
-                    login(binding.etEmail.text.toString(), binding.etPassword.text.toString())
-                }
-            }
-            R.id.btn_register -> {
-                if (validateForm()) {
-                    register(binding.etEmail.text.toString(), binding.etPassword.text.toString())
-                }
+        if (v?.id == R.id.btn_login) {
+            if (validateForm()) {
+                val email = binding.etEmail.text.toString()
+                val password = binding.etPassword.text.toString()
+                login(email, password)
             }
         }
     }
@@ -66,27 +64,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
     }
 
-    private fun register(email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    Log.d("MainActivity", "createUserWithEmail:success")
-                    val user = auth.currentUser
-                    updateUI(user)
-                } else {
-                    Log.w("MainActivity", "createUserWithEmail:failure", task.exception)
-                    Toast.makeText(
-                        baseContext, "Registration failed: ${task.exception?.message}",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
-    }
-
     private fun validateForm(): Boolean {
         var valid = true
 
         val email = binding.etEmail.text.toString()
+        val password = binding.etPassword.text.toString()
+
         if (TextUtils.isEmpty(email)) {
             binding.etEmail.error = "Required"
             valid = false
@@ -94,12 +77,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             binding.etEmail.error = null
         }
 
-        val password = binding.etPassword.text.toString()
         if (TextUtils.isEmpty(password)) {
             binding.etPassword.error = "Required"
-            valid = false
-        } else if (password.length < 6) {
-            binding.etPassword.error = "Password too short (min 6 chars)"
             valid = false
         } else {
             binding.etPassword.error = null
