@@ -33,7 +33,6 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.btnProfile.setOnClickListener {
-            auth.signOut()
             startActivity(Intent(this, ProfileActivity::class.java))
             finish()
         }
