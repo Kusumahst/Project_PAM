@@ -1,0 +1,161 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#F5F5F5"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daftarin\ndiri kamu dulu,\nyuk!"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        android:layout_gravity="start"
+        android:textColor="@color/blue"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/plus_jakarta"/>
+
+    <!-- Card View for Input Fields -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Lengkap"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/plus_jakarta"/>
+
+            <!-- Nama Input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan Nama"
+                    android:fontFamily="@font/plus_jakarta"
+                    android:textSize="14sp"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/plus_jakarta"/>
+            <!-- Email Input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan Email"
+                    android:fontFamily="@font/plus_jakarta"
+                    android:textSize="14sp"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kata Sandi"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/plus_jakarta"/>
+
+            <!-- Password Input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan Kata Sandi"
+                    android:fontFamily="@font/plus_jakarta"
+                    android:textSize="14sp"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/blue"
+        android:text="Daftar"
+        android:textAllCaps="false"
+        android:fontFamily="@font/plus_jakarta"
+        android:textColor="#FFFFFF" />
+
+    <!-- Register Section: Text + Button in Horizontal Layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start|center_vertical"
+        android:layout_marginTop="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sudah Punya Akun?"
+            android:textColor="#0E1B49"
+            android:textSize="14sp"
+            android:layout_marginEnd="5dp"/>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masuk Yuk"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textColor="#0E1B49"
+            android:backgroundTint="#FFFFFF"
+            android:elevation="4dp"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="12dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textSize="14sp"
+            android:fontFamily="@font/plus_jakarta"/>
+    </LinearLayout>
+
+</LinearLayout>
