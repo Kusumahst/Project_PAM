@@ -2,6 +2,9 @@
 
     <!-- Base application theme. -->
     <style name="Base.Theme.FinalProjectTiket" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Splash screen background color -->
+        <item name="android:windowSplashScreenBackground">#152955</item>
+
         <!-- Override popup menu agar tidak transparan -->
         <item name="popupMenuStyle">@style/CustomPopupMenu</item>
     </style>
