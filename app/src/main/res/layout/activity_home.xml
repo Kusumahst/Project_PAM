@@ -33,15 +33,16 @@
                     android:src="@drawable/ic_logo_secondary"
                     android:contentDescription="Logo" />
 
-                <Button
-                    android:id="@+id/btn_logout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/blue"
+                <ImageButton
+                    android:id="@+id/btn_profile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="end"
-                    android:layout_marginEnd="8dp"
-                    android:text="Logout"
-                    android:textColor="@android:color/white" />
+                    android:layout_marginEnd="10dp"
+                    android:scaleType="centerInside"
+                    android:backgroundTint="@color/blue"
+                    android:src="@drawable/ic_logo_profile2" />
+
             </androidx.appcompat.widget.Toolbar>
 
             <!-- Banner -->

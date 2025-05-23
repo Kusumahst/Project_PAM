@@ -32,9 +32,9 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, AddEventActivity::class.java))
         }
 
-        binding.btnLogout.setOnClickListener {
+        binding.btnProfile.setOnClickListener {
             auth.signOut()
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, ProfileActivity::class.java))
             finish()
         }
     }
